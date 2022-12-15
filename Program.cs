@@ -24,14 +24,35 @@ namespace ProductReviewManagement
                 new ProductReview(){ProductID=11,UserID=1,Rating=3,Review="nice",isLike=true}
 
             };
+            Console.WriteLine("1.Check The Record In The List");
+            Console.WriteLine("2.Retrive Top Three Record");
+            Console.WriteLine("3.Retrive The records For Product Id 1,4 and 9 And Check The Rating Is greater than 3");
+            Console.WriteLine("4.Retrive Count Of Review For Each Product ID");
+            int CHECK = Convert.ToInt32(Console.ReadLine());
+            switch (CHECK)
+            {
 
-               foreach (var list in productReviewList)
-               {
-                   Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
-                       + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
-               }
-            Management management = new Management();
-            management.TopRecords(productReviewList);
+                case 1:
+                    foreach (var list in productReviewList)
+                    {
+                        Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                            + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
+                    }
+                    break;
+                case 2:
+                    Management management = new Management();
+                    management.TopRecords(productReviewList);
+                    break;
+
+                case 3:
+                    Management management1 = new Management();
+                    management1.SelectedRecords(productReviewList);
+                    break;
+                case 4:
+                    Management management2 = new Management();
+                    management2.RetrieveCountOfRecords(productReviewList);
+                    break;
+            }
         }
     }
 }
