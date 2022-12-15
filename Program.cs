@@ -25,11 +25,13 @@ namespace ProductReviewManagement
 
             };
 
-            foreach (var list in productReviewList)
-            {
-                Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
-                    + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
-            }
+               foreach (var list in productReviewList)
+               {
+                   Console.WriteLine("ProductID:- " + list.ProductID + " " + "UserID:- " + list.UserID
+                       + " " + "Rating:- " + list.Rating + " " + "Review:- " + list.Review + " " + "isLike:- " + list.isLike);
+               }
+            Management management = new Management();
+            management.TopRecords(productReviewList);
         }
     }
 }
